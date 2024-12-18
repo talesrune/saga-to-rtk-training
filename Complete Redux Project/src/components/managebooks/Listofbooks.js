@@ -1,8 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useGetBooksQuery } from "../api/booksApi";
 
 function Listofbooks() {
-  const books = useSelector((state) => state.reducerManageBooks);
+  // const books = useSelector((state) => state.reducerManageBooks);
+  // console.log(books)
+  const { data:books, error, isLoading } = useGetBooksQuery();
+  console.log(books)
 
   const GetRatingText = (ratingNo) => {
     switch (ratingNo) {
@@ -35,9 +39,10 @@ function Listofbooks() {
           </tr>
         </thead>
         <tbody>
-          {books === undefined || books.books === undefined
+        {/* <>{JSON.stringify(books)}</> */}
+          {books === undefined 
             ? null
-            : books.books.map((book, index) => {
+            : books.map((book, index) => {
                 return (
                   <tr key={index}>
                     <td>{book.bookid}</td>
