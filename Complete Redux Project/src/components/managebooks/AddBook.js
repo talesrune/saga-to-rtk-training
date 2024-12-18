@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { actionAddBook } from "../../actions/actionManageBooks";
+// import { actionAddBook } from "../../actions/actionManageBooks";
 
 function AddBook() {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ function AddBook() {
       rating: parseInt(bkrating),
     };
 
-    actionAddBook(dispatch, obj);
+    // actionAddBook(dispatch, obj);
   };
 
   return (

@@ -5,7 +5,7 @@ import StatsPanel from "../common/StatsPanel";
 import Listofbooks from "./Listofbooks";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { actionGetBooks } from "../../actions/actionManageBooks";
+// import { actionGetBooks } from "../../actions/actionManageBooks";
 
 function ManageBook() {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ function ManageBook() {
   const mybooks = useSelector((state) => state.reducerManageBooks);
 
   useEffect(() => {
-    actionGetBooks(dispatch);
+    // actionGetBooks(dispatch);
   }, []);
 
   return (
