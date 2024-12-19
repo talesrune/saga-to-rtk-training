@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useAddBookMutation } from "../api/booksApi";
+// import { useDispatch } from "react-redux";
 // import { actionAddBook } from "../../actions/actionManageBooks";
 
 function AddBook() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const [bkname, setBkname] = useState("");
   const [bkauthor, setBkauthor] = useState("");
   const [bkstatus, setBkstatus] = useState("Available");
   const [bkrating, setBkrating] = useState(5);
 
-  const AddBookToStore = () => {
+  const [addBook] = useAddBookMutation();
+
+  const AddBookToStore = async () => {
     let obj = {
       bookid: Math.floor(Math.random() * 100000),
       bookname: bkname,
@@ -20,6 +23,16 @@ function AddBook() {
     };
 
     // actionAddBook(dispatch, obj);
+    try {
+      await addBook(obj).unwrap();
+      // Clear the form after successful addition
+      setBkname("");
+      setBkauthor("");
+      setBkstatus("Available");
+      setBkrating(5);
+    } catch (error) {
+      console.error("Failed to add book:", error);
+    }
   };
 
   return (
