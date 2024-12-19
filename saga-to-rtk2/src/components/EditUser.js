@@ -7,7 +7,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 const EditUser = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const history = useNavigate();
+  const navigate = useNavigate();
   const user = useSelector(state =>
     state.users.users.find(user => user.id === parseInt(id))
   );
@@ -25,7 +25,7 @@ const EditUser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(updateUserRequest({ id: parseInt(id), name, email }));
-    history('/');
+    navigate('/');
   };
 
   return (
