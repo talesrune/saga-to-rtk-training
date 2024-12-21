@@ -38,6 +38,12 @@
     ]
   },
   "devDependencies": {
+    "msw": "^2.7.0",
     "web-vitals": "^4.2.4"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

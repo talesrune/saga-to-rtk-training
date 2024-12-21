@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { startMockServiceWorker } from "./mocks/browser";
+
+// Start the Mock Service Worker
+if (process.env.NODE_ENV === 'development') {
+  startMockServiceWorker()
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
