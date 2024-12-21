@@ -1,18 +1,22 @@
 // src/components/AddUser.js
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addUserRequest } from '../redux/userActions';
+// import { useDispatch } from 'react-redux';
+// import { addUserRequest } from '../redux/userActions';
 import { useNavigate } from 'react-router-dom';
+import { useAddUserMutation } from '../redux/apiSlice';
 
 const AddUser = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const dispatch = useDispatch();
+
+  const [addUser] = useAddUserMutation();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(addUserRequest({ name, email }));
+    // dispatch(addUserRequest({ name, email }));
+    await addUser({ name, email });
     navigate('/');
   };
 

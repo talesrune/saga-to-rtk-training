@@ -1,20 +1,18 @@
-// src/redux/store.js
-// import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import rootReducer from './reducers';
+// import createSagaMiddleware from 'redux-saga';
+// import rootReducer from './reducers';
 import rootSaga from '../saga/saga';
 import { configureStore } from '@reduxjs/toolkit';
+import { apiSlice } from './apiSlice';
+
 
 // const sagaMiddleware = createSagaMiddleware();
-// const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
-// sagaMiddleware.run(rootSaga);
-
-const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({
-    reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
+    reducer: {
+        [apiSlice.reducerPath]: apiSlice.reducer
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
 });
 
-sagaMiddleware.run(rootSaga);
+// sagaMiddleware.run(rootSaga);
 
 export default store;

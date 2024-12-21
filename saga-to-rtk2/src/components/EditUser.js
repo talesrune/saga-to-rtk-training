@@ -1,16 +1,23 @@
 // src/components/EditUser.js
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateUserRequest } from '../redux/userActions';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { updateUserRequest } from '../redux/userActions';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useUpdateUserMutation, useFetchUsersQuery } from '../redux/apiSlice';
+
 
 const EditUser = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector(state =>
-    state.users.users.find(user => user.id === parseInt(id))
-  );
+  // const user = useSelector(state =>
+  //   state.users.users.find(user => user.id === parseInt(id))
+  // );
+
+  const { data: users = [] } = useFetchUsersQuery();
+  const [updateUser] = useUpdateUserMutation();
+  const user = users.find(user => user.id === parseInt(id));
+
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -22,9 +29,10 @@ const EditUser = () => {
     }
   }, [user]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(updateUserRequest({ id: parseInt(id), name, email }));
+    // dispatch(updateUserRequest({ id: parseInt(id), name, email }));
+    await updateUser({ id: id, name, email });
     navigate('/');
   };
 
