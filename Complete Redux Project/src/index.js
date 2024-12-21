@@ -5,6 +5,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
 import { Provider } from "react-redux";
+import { startMockServiceWorker } from "./mocks/browser";
+
+ 
+// Start the Mock Service Worker
+if (process.env.NODE_ENV === 'development') {
+  startMockServiceWorker()
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
