@@ -18,7 +18,7 @@ export const handlers = [
       },
       {
         "id": "23f3",
-        "name": "leggoshi",
+        "name": "letsgo",
         "email": "rab@gmai.com"
       }
     ])
