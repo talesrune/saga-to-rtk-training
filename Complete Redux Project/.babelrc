@@ -1,0 +1,4 @@
+// filepath: /C:/Users/HowToDoThis/Desktop/Things to move/Bootcamp 2022/react_hookform/saga-to-rtk-training/saga-to-rtk2/.babelrc
+{
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+}

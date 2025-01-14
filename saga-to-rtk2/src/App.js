@@ -16,11 +16,16 @@ const App = () => (
           <Route exact path="/" element={<Users/>} />
           <Route path="/add-user" element={<AddUser/>} />
           <Route path="/edit-user/:id" element={<EditUser/>} />
-          <Route path="*" element={<>ERROR</>} />
+          {/* <Route path="*" element={<>ERROR</>} /> */}
         </Routes>
       </Suspense>
     </Router>
   </Provider>
+  
+    // <div>
+    //   <h1>Saga to RTK2 App</h1>
+    // </div>
+  
 );
 
 export default App;

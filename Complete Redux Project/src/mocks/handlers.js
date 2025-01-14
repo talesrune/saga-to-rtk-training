@@ -24,4 +24,24 @@ export const handlers = [
           }
     ])
   }),
+  http.get('http://localhost:5000/users', () => {
+    // ...and respond to them using this JSON response.
+    return HttpResponse.json([
+      {
+        "id": "5fa3",
+        "name": "huh",
+        "email": "parent@gmail.com"
+      },
+      {
+        "id": "1b6a",
+        "name": "good",
+        "email": "sirparent@gmai.com"
+      },
+      {
+        "id": "23f3",
+        "name": "letsgo",
+        "email": "parent@gmai.com"
+      }
+    ])
+  }),
 ]
