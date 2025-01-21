@@ -7,22 +7,32 @@ import store from "./store";
 import { Provider } from "react-redux";
 import { startMockServiceWorker } from "./mocks/browser";
 
- 
 // Start the Mock Service Worker
-if (process.env.NODE_ENV === 'development') {
-  startMockServiceWorker()
+if (process.env.NODE_ENV === "development") {
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  startMockServiceWorker().then(() => {
+    setTimeout(() => {
+      root.render(
+        <React.StrictMode>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </React.StrictMode>
+      );
+    }, 1000);
+  });
+} else {
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+  );
 }
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
-);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();

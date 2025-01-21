@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { startMockServiceWorker } from "./mocks/browser";
 
-// Start the Mock Service Worker
+//Start the Mock Service Worker
 if (process.env.NODE_ENV === 'development') {
   startMockServiceWorker()
 }
