@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "name": "Coconut water",
+      "price": "3",
+      "id": "3"
+    },
+    {
+      "name": "Lemon juice",
+      "price": "3",
+      "id": "4"
+    },
+    {
+      "name": "Pineapple juice",
+      "price": 1,
+      "id": "5"
+    },
+    {
+      "id": "3c89",
+      "name": "1",
+      "price": 2
+    }
+  ]
+}
