@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "name": "Coconut water",
-      "price": "4",
-      "id": "3"
-    },
-    {
       "name": "Lemon juice",
       "price": "3",
       "id": "4"
@@ -16,9 +11,9 @@
       "id": "5"
     },
     {
-      "id": "3126",
-      "name": "helo",
-      "price": 3
+      "id": "d39c",
+      "name": "joker",
+      "price": 440
     }
   ]
 }
