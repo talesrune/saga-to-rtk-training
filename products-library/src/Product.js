@@ -13,7 +13,7 @@ const Product = (product) => {
           className='button button--edit'
           type='button'
           onClick={() => redirectionEdition(product)}
-        >Edit</button>
+        >Edit link</button>
         <button
           className='button button--delete'
           type='button'

@@ -23,7 +23,7 @@ var Product = function Product(product) {
     onClick: function onClick() {
       return redirectionEdition(product);
     }
-  }, "Edit"), /*#__PURE__*/_react["default"].createElement("button", {
+  }, "Edit link"), /*#__PURE__*/_react["default"].createElement("button", {
     className: "button button--delete",
     type: "button",
     onClick: function onClick() {

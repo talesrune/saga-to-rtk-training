@@ -115,3 +115,10 @@ const Products = () => {
 }
 
 export default Products
+
+// make sure peerdependencies are installed
+// cd /path/to/products-library
+// npm run build
+// npm link
+// cd /path/to/saga-only
+// npm link products-library
