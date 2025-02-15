@@ -30,6 +30,12 @@ import {
 function* retrieveProducts() {
   try {
     const {data} = yield call(retrieveProductsDB)
+    console.log('done')
+    console.log(data)
+    console.log('lets go')
+    // throw ('error') //error scenario
+    // const empty = [] //empty scenario
+    // yield downloadProductsOkAction(empty) //data
     yield downloadProductsOkAction(data)
   } catch (error) {
     yield put(downloadProductsErrorAction())

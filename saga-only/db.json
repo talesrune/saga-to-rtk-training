@@ -2,7 +2,7 @@
   "products": [
     {
       "name": "Coconut water",
-      "price": "3",
+      "price": "4",
       "id": "3"
     },
     {
@@ -16,9 +16,9 @@
       "id": "5"
     },
     {
-      "id": "3c89",
-      "name": "1",
-      "price": 2
+      "id": "3126",
+      "name": "helo",
+      "price": 3
     }
   ]
 }
